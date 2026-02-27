@@ -3,6 +3,8 @@ Sistema de Biblioteca con gRPC
 Taller de Sistemas Distribuidos — Febrero 2026  
 Hecho por: Jose Guerrero - Samuel Giraldo - Marianne Coy - Daniel Diaz
 
+Link de l video: https://drive.google.com/file/d/111_ZIPO7beguF9903jV2GrLotwukdgLI/view?usp=sharing
+
 Este proyecto es un sistema de préstamos de biblioteca. Tiene un servidor en Java con gRPC y una base de datos SQLite, y un cliente con interfaz gráfica hecha en Java Swing.
 
 ---
