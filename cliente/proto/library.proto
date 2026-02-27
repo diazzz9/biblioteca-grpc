@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package library;
+
+option java_multiple_files = true;
+option java_package = "library";
+option java_outer_classname = "BibliotecaProto";
+
+service BibliotecaService {
+  rpc Consultar (ConsultarReq) returns (ConsultarRes);
+  rpc PrestarPorIsbn (PrestarPorIsbnReq) returns (PrestarRes);
+  rpc PrestarPorTitulo (PrestarPorTituloReq) returns (PrestarRes);
+  rpc Devolver (DevolverReq) returns (DevolverRes);
+}
+
+message ConsultarReq { string isbn = 1; }
+
+message ConsultarRes {
+  bool existe = 1;
+  string mensaje = 2;
+  string isbn = 3;
+  string titulo = 4;
+  int32 total_ejemplares = 5;
+  int32 ejemplares_disponibles = 6;
+}
+
+message PrestarPorIsbnReq {
+  string isbn = 1;
+  string prestatario = 2;
+}
+
+message PrestarPorTituloReq {
+  string titulo = 1;
+  string prestatario = 2;
+}
+
+message PrestarRes {
+  bool ok = 1;
+  string mensaje = 2;
+  string isbn = 3;
+  string titulo = 4;
+  string fecha_devolucion_iso = 5;
+}
+
+message DevolverReq {
+  string isbn = 1;
+  string prestatario = 2;
+}
+
+message DevolverRes {
+  bool ok = 1;
+  string mensaje = 2;
+  int32 ejemplares_disponibles = 3;
+}
